@@ -1,0 +1,19 @@
+Key notes for Team about the datasets and the data analysis.
+
+Dwelling selection to remove bias from model
+
+Step 1 : Produce a summary of all the houses
+
+Step 2: Select the first subset of houses based on
+
+      a) no_of_days of data available ( needs to be at least 1 year to reflect seasonality)
+
+      b) less than 2 days HH missing ( or shall we do this as a percentage of total available points instead)
+
+      c) less than  10 zeros ( or shall we do this as a percentage of total available points instead)
+
+Step 3 : Selecting groups ( consider all ACORN classes, discount the ones with less than 50 houses or merge groups
+
+Step 4: Matching start and end dates  for each group
+
+Step 5: Averaging for each timestamp for each group by with and without outliers
