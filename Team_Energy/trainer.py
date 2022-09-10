@@ -74,6 +74,7 @@ if __name__ == "__main__":
     trainer.train_model(train_wd = train_wd, holidays = holidays)
 
     print('model trained successfully')
+
     # Evaluate (MAPE)
     # evaluation = trainer.evaluate()
     # print(evaluation)
