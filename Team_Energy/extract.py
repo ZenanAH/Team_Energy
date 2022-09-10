@@ -1,4 +1,5 @@
 import pandas as pd
+pd.options.mode.chained_assignment = None  # default='warn'
 import numpy as np
 
 print('###########################')
@@ -67,12 +68,12 @@ for i in range (0,int(len(houselist))):
     blockstr = f'../raw_data/halfhourly_dataset/{blocklist[i]}.csv'
     if blocklist[i] != blocklist[i-1]:
         df_house = pd.read_csv(blockstr, dtype = {'LCLid': object, 'tstp': object , 'energy(kWh/hh)': object})
-    df_house = df_house[df_house['LCLid'] == houselist[i]]
-    df_house['tariff'] = tarifflist[i]
-    LCL.extend(df_house['LCLid'])
-    DateTime.extend(df_house['tstp'])
-    KWH.extend(df_house['energy(kWh/hh)'])
-    tariff.extend(df_house['tariff'])
+    df2_house = df_house[df_house['LCLid'] == houselist[i]]
+    df2_house['tariff'] = tarifflist[i]
+    LCL.extend(df2_house['LCLid'])
+    DateTime.extend(df2_house['tstp'])
+    KWH.extend(df2_house['energy(kWh/hh)'])
+    tariff.extend(df2_house['tariff'])
 
 # Creating a new Data Frame with lists
 
@@ -120,13 +121,14 @@ lb = q1 - 1.5 * IQR
 block_data[(block_data['KWH/hh'] <= ub) & (block_data['KWH/hh'] >= lb)]
 
 # Ask to separate data by tariff
-print('Separate data by tariff? Y/N')
-tariffchoice = input()
-if tariffchoice not in ['Y', 'N']:
-    print('Invalid selection')
-    exit()
+print('tariff choice bypassed')
+# print('Separate data by tariff? Y/N')
+# tariffchoice = input()
+# if tariffchoice not in ['Y', 'N']:
+#     print('Invalid selection')
+#     exit()
 
-if tariffchoice == 'N':
+if 1 == 1:
     # Create average time
     block_data_avg=block_data.groupby(by=block_data.DateTime).mean()
     block_data_avg.sort_index(inplace=True)
@@ -137,10 +139,10 @@ if tariffchoice == 'N':
     filename = f'df_{groupletter}_avg_v1.csv'
 
     block_data_avg.to_csv(f'../raw_data/{filename}')
-    print('Process Complete')
-    quit()
+    # print('Process Complete')
+    # quit()
 
-if tariffchoice == 'Y':
+if 1 == 1:
     tariffblock = block_data[block_data['tariff'] == 'ToU']
     stdblock = block_data[block_data['tariff'] == 'Std']
 
