@@ -20,7 +20,7 @@ print('model loaded succcessfully')
 
 
 # Predict
-def forecast_model(m,train_wd,test_wd,add_weather=False):
+def forecast_model(m,train_wd,test_wd,add_weather=True):
     future = m.make_future_dataframe(periods=48*27+1, freq='30T')
     if add_weather==True:
         wd_filt_future=future[['ds']].merge(pd.concat([future,pd.concat([train_wd,test_wd],axis=0)]),left_on='ds',right_on='DateTime',how='inner').drop(columns='DateTime')
@@ -52,7 +52,7 @@ if __name__ == "__main__":
     train_wd, test_wd = get_weather(train_df, test_df)
     print('dataframes loaded')
     # Calculate forecast and MAPE
-    forecast = forecast_model(m=m, train_wd = train_wd, test_wd = test_wd, add_weather = False)
+    forecast = forecast_model(m=m, train_wd = train_wd, test_wd = test_wd, add_weather = True)
     print('forecast made')
     mape = evaluate(test_df['KWH/hh'], forecast['yhat'])
     # Print MAPE

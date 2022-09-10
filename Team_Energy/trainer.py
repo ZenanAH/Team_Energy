@@ -21,7 +21,7 @@ class Trainer ():
         self.tariff = tariff
 
     # Train
-    def train_model(self, train_wd, holidays,add_weather=False):
+    def train_model(self, train_wd, holidays,add_weather=True):
         self.train_df.rename(columns={"DateTime": "ds", "KWH/hh": "y"},inplace=True)
         if add_weather==True:
             temp = train_wd['temperature'].interpolate(method='linear')
@@ -34,7 +34,7 @@ class Trainer ():
         self.m = m
 
     # Predict
-    def forecast_model(self,train_wd,test_wd,add_weather=False):
+    def forecast_model(self,train_wd,test_wd,add_weather=True):
         future = self.m.make_future_dataframe(periods=48*27+1, freq='30T')
         if add_weather==True:
             wd_filt_future=future[['ds']].merge(pd.concat([future,pd.concat([train_wd,test_wd],axis=0)]),left_on='ds',right_on='DateTime',how='inner').drop(columns='DateTime')
@@ -56,30 +56,31 @@ class Trainer ():
         joblib.dump(self.m, f'model_{self.name}_{self.tariff}.joblib')
 
 if __name__ == "__main__":
-    print('input group')
-    name = input()
-    print('Input tariff: Std or ToU')
-    tariff = input()
+    groups = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q']
 
-    print('starting process')
+    for name in groups:
+        print(f'Now modelling group {name}')
+        tariff = 'ToU'
 
-    # Get Data
-    train_df, test_df = create_data(name, tariff)
-    holidays = get_holidays()
-    train_wd, test_wd = get_weather(train_df, test_df)
+        print('starting process')
 
-    print('data imported successfully')
+        # Get Data
+        train_df, test_df = create_data(name, tariff)
+        holidays = get_holidays()
+        train_wd, test_wd = get_weather(train_df, test_df)
 
-    # Train
-    trainer = Trainer(train_df, name = name, tariff = tariff)
-    trainer.train_model(train_wd = train_wd, holidays = holidays)
+        print('data imported successfully')
 
-    print('model trained successfully')
+        # Train
+        trainer = Trainer(train_df, name = name, tariff = tariff)
+        trainer.train_model(train_wd = train_wd, holidays = holidays)
 
-    # Evaluate (MAPE)
-    # evaluation = trainer.evaluate()
-    # print(evaluation)
+        print('model trained successfully')
 
-    # Save
-    trainer.save_model()
-    print('model saved successfully')
+        # Evaluate (MAPE)
+        # evaluation = trainer.evaluate()
+        # print(evaluation)
+
+        # Save
+        trainer.save_model()
+        print('model saved successfully')
