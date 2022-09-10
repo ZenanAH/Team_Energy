@@ -56,9 +56,10 @@ class Trainer ():
         joblib.dump(self.m, f'model_{self.name}_{self.tariff}.joblib')
 
 if __name__ == "__main__":
-
-    name = 'A'
-    tariff = 'Std'
+    print('input group')
+    name = input()
+    print('Input tariff: Std or ToU')
+    tariff = input()
 
     print('starting process')
 

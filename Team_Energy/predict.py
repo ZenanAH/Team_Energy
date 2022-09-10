@@ -54,7 +54,7 @@ if __name__ == "__main__":
     # Calculate forecast and MAPE
     forecast = forecast_model(m=m, train_wd = train_wd, test_wd = test_wd, add_weather = False)
     print('forecast made')
-    mape = evaluate(test_df['KWH/hh'], forecast['KWH/hh'])
+    mape = evaluate(test_df['KWH/hh'], forecast['yhat'])
     # Print MAPE
     print('mape is:')
     print(mape)
