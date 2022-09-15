@@ -1,14 +1,12 @@
 # Imports
 import numpy as np
 import matplotlib.pyplot as plt
-plt.style.use('fivethirtyeight')
 import seaborn as sns
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, LSTM, Dropout, GRU, Bidirectional
 from tensorflow.keras.optimizers import SGD
-
 from Team_Energy.data import create_data
 from Team_Energy.prepare import prepare_sequences
 
@@ -72,17 +70,17 @@ if __name__ == "__main__":
     print('Fetching data ...')
 
     # Get Data
-    train_df, test_df = create_data(name, tariff)
+    train_df,test_df,val_df = create_data(name, tariff)
 
     print('data imported successfully')
 
     print('preparing sequences')
     # Prepare sequences
-    x_train,y_train,x_test,sc, test_set = prepare_sequences(train_df, test_df)
+    X_train, y_train, X_test, sc, test_set = prepare_sequences(train_df, test_df,val_df)
     print('sequence preparation complete')
     print('Now training model...')
     # Train
-    trainer = Trainer(x_train, x_test, y_train, name = name, tariff = tariff)
+    trainer = Trainer(X_train,X_test,y_train, name = name, tariff = tariff)
     trainer.train_model()
     print('Model trained successfully')
 
