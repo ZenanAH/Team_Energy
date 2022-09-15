@@ -8,6 +8,7 @@ wheel>=0.29
 numpy
 pandas
 scikit-learn
+tensorflow
 
 # tests/linter
 black
@@ -28,5 +29,5 @@ joblib
 memoized-property
 termcolor
 
-# models
-Prophet
+# Protobuf conflict
+protobuf <3.20

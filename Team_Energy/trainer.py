@@ -3,13 +3,18 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import os
+import itertools
 from matplotlib import pyplot as plt
 import joblib
 from Team_Energy.data import split_data, create_data, get_holidays, get_weather
 from sklearn.metrics import mean_absolute_percentage_error
 
+
 #Facebook Prophet
 from prophet import Prophet
+from prophet.diagnostics import cross_validation
+from prophet.diagnostics import performance_metrics
+
 
 class Trainer ():
 
@@ -32,6 +37,38 @@ class Trainer ():
             m = Prophet(holidays=holidays,changepoint_prior_scale=0.01)
             m.fit(self.train_df)
         self.m = m
+
+    # Hyper-parameter Tuning
+    def tune_model(self):
+
+        # Set grid
+        param_grid = {
+        'changepoint_prior_scale': [0.001, 0.01, 0.1, 0.5],
+        'seasonality_prior_scale': [0.01, 0.1, 1.0, 10.0],
+}
+        # Generate all combinations of parameters
+        all_params = [dict(zip(param_grid.keys(), v)) for v in itertools.product(*param_grid.values())]
+        mapes = []  # Store the MAPE's for each params here
+
+        # Rename columns for accurate cv
+        self.train_df = self.train_df.rename(columns = {"DateTime": "ds", "KWH/hh": "y"})
+        print(self.train_df.keys())
+
+        # Use cross validation to evaluate all parameters
+        for params in all_params:
+            m = Prophet(**params).fit(self.train_df)  # Fit model with given params
+            df_cv = cross_validation(m, horizon='30 days', parallel="processes")
+            df_p = performance_metrics(df_cv, rolling_window=1)
+            mapes.append(df_p['mape'].values[0])
+
+        # Finding the best parameters
+        tuning_results = pd.DataFrame(all_params)
+        tuning_results['mape'] = mapes
+
+        # Python
+        best_params = all_params[np.argmin(mapes)]
+        print(best_params)
+
 
     # Predict
     def forecast_model(self,train_wd,test_wd,add_weather=True):
@@ -57,30 +94,37 @@ class Trainer ():
 
 if __name__ == "__main__":
     groups = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q']
+    print('input group')
+    group = input()
+#for name in groups:
+    print(f'Now modelling {group}')
+    tariff = 'ToU'
 
-    for name in groups:
-        print(f'Now modelling group {name}')
-        tariff = 'ToU'
+    print('starting process')
 
-        print('starting process')
+    # Get Data
+    train_df, test_df = create_data(group, tariff)
+    holidays = get_holidays()
+    train_wd, test_wd = get_weather(train_df, test_df)
 
-        # Get Data
-        train_df, test_df = create_data(name, tariff)
-        holidays = get_holidays()
-        train_wd, test_wd = get_weather(train_df, test_df)
+    print('data imported successfully')
 
-        print('data imported successfully')
+    # # Train
+    # trainer = Trainer(train_df, name = group, tariff = tariff)
+    # trainer.train_model(train_wd = train_wd, holidays = holidays)
 
-        # Train
-        trainer = Trainer(train_df, name = name, tariff = tariff)
-        trainer.train_model(train_wd = train_wd, holidays = holidays)
+    # print('model trained successfully')
 
-        print('model trained successfully')
+    # # Evaluate (MAPE)
+    # # evaluation = trainer.evaluate()
+    # # print(evaluation)
 
-        # Evaluate (MAPE)
-        # evaluation = trainer.evaluate()
-        # print(evaluation)
+    # # Save
+    # trainer.save_model()
+    # print('model saved successfully')
 
-        # Save
-        trainer.save_model()
-        print('model saved successfully')
+    # Grid search
+    print('now tuning model')
+    trainer = Trainer(train_df, name = group, tariff = tariff)
+    trainer.tune_model()
+    print('process complete')
