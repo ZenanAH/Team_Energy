@@ -18,10 +18,15 @@ def split_data(filename,tariff):
     return train_data, validation_data, test_data
 
 # Data-Processing
-def create_data(name, tariff):
-    tdata, vdata, testd= split_data(f'https://storage.googleapis.com/energy_usage_prediction_903/df_{name}_avg_{tariff}_v1.csv',tariff)
+def create_data1(acorn_group,tariff):
+    tdata, vdata, testd=split_data(f'https://storage.googleapis.com/energy_usage_prediction_903/df_{name}_avg_{tariff}_v1.csv',tariff)
     # add val and train for prophet
-    pdata=pd.concat([tdata,vdata],axis=0).reset_index(drop=True)
+    combine_tr_vl=False
+
+    if combine_tr_vl==True:
+      pdata=pd.concat([tdata,vdata],axis=0).reset_index(drop=True)
+    else:
+      pdata=tdata
 
     global_average=False
 
@@ -30,29 +35,23 @@ def create_data(name, tariff):
         pdata.drop(columns='Unnamed: 0',inplace=True)
         testd.drop(columns='Unnamed: 0',inplace=True)
         vdata.drop(columns='Unnamed: 0',inplace=True)
-        train_df=pdata.loc[:,['DateTime','KWH/hh']]
-        test_df=testd.loc[:,['DateTime','KWH/hh']]
-    else:
-        # group all for dumb models
-        df5=pdata.loc[:,['DateTime','Acorn_Group','KWH/hh']]
-        df5.set_index('DateTime',inplace=True)
-        train_df=df5.groupby(by=df5.index).mean()
-        train_df=train_df.reset_index()
-        test_df=testd.loc[:,['DateTime','Acorn_Group','KWH/hh']].groupby(by=testd['DateTime']).mean()
-        test_df.reset_index(inplace=True)
 
-    # Group By
+    # group by
     df5=pdata.loc[:,['DateTime','KWH/hh']]
     df5.set_index('DateTime',inplace=True)
 
     train_df=df5.groupby(by=df5.index).mean()
     train_df=train_df.reset_index()
+
     test_df=testd.loc[:,['DateTime','KWH/hh']].groupby(by=testd['DateTime']).mean()
     test_df.reset_index(inplace=True)
+
     val_df=vdata.loc[:,['DateTime','KWH/hh']].groupby(by=vdata['DateTime']).mean()
     val_df.reset_index(inplace=True)
 
     return train_df,test_df,val_df
+
+
 
 # ****  Other Parameters ****
 
