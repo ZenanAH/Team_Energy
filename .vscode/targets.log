@@ -1,3 +1,375 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
 
+# This program built for i386-apple-darwin11.3.0
+
+# Make data base, printed on Sat Sep 10 09:39:30 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+HOMEBREW_NO_ANALYTICS = 1
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/jordanharris/code/ZananAH/Team_Energy
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# environment
+GOOGLE_APPLICATION_CREDENTIALS = /Users/jordanharris/code/RedLorryYellowDesign/gcp/team-weather-lewagon-660d42e2b3b9.json
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# makefile (from `Makefile', line 47)
+PYPI_USERNAME = <AUTHOR>
+# environment
+VSCODE_CWD = /Users/jordanharris/code/ZananAH
+# environment
+PATH = /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:./bin:./node_modules/.bin:/Users/jordanharris/.pyenv/plugins/pyenv-virtualenv/shims:/Users/jordanharris/.pyenv/shims:/Users/jordanharris/.rbenv/bin:/Users/jordanharris/.pyenv/plugins/pyenv-virtualenv/shims:/Users/jordanharris/.pyenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/jordanharris/.fig/bin:/Users/jordanharris/.local/bin:/usr/local/sbin
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+VIRTUAL_ENV = /Users/jordanharris/.pyenv/versions/3.8.12/envs/lewagon
+# environment
+LaunchInstanceID = 498F5CDD-5577-4A21-B75B-245E464067A8
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+PYENV_ROOT = /Users/jordanharris/.pyenv
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.BLr7gGNXoN/Listeners
+# automatic
+%F = $(notdir $%)
+# environment
+TTY = /dev/ttys002
+# environment
+FIG_PID = 56960
+# environment
+PWD = /Users/jordanharris/code/ZananAH/Team_Energy
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+PYENV_SHELL = zsh
+# environment
+HOME = /Users/jordanharris
+# default
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/jordanharris/Library/Application Support/Code/CachedData/784b0177c56c607789f9638da7b6bf3230d47a8c
+# environment
+LOGNAME = jordanharris
+# environment
+BUNDLER_EDITOR = code
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+PYTHONBREAKPOINT = ipdb.set_trace
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 3
+# environment
+FIG_TERM = 1
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = jordanharris
+# environment
+FIG_TERM_VERSION = 5.2.0
+# environment
+TERM_SESSION_ID = 1AF1ABB2-D21F-420E-ABD7-67B2EE6F6CCC
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+FIG_INTEGRATION_VERSION = 8
+# default
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# environment
+TERM_PROGRAM = Apple_Terminal
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/rl/0s5z0lfs141b962gbhcmptsr0000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/jordanharris/Library/Application Support/Code/1.71.0-main.sock
+# environment
+MallocNanoZone = 0
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+TERM_PROGRAM_VERSION = 445
+# environment
+NVM_DIR = /Users/jordanharris/.nvm
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.12885322303.12885322309.333FEC6E-9EF5-480D-A28B-564C8A7D1F7E
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x2
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+EDITOR = code
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# environment
+PYENV_VIRTUALENV_DISABLE_PROMPT = 1
+# environment
+PYENV_VIRTUAL_ENV = /Users/jordanharris/.pyenv/versions/3.8.12/envs/lewagon
+# environment
+SECURITYSESSIONID = 186a3
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+PYENV_VIRTUALENV_INIT = 1
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# makefile
+.DEFAULT_GOAL := install_requirements
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_PID = 449
+# variable set hash-table stats:
+# Load=87/1024=8%, Rehash=0, Collisions=4/113=4%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777220, inode 12885785136): 19 files, no impossibilities.
+
+# 19 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+black:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 11):
+	@black scripts/* Team_Energy/*.py
+	
+
+all: clean install test black check_code
+#  Command-line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/2=0%
+
+install_requirements:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 5):
+	@pip install -r requirements.txt
+	
+
+pypi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 55):
+	@twine upload dist/* -u $(PYPI_USERNAME)
+	
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-09-06 19:37:03
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+test:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 14):
+	@coverage run -m pytest tests/*.py
+	@coverage report -m --omit="${VIRTUAL_ENV}/lib/python*"
+	
+
+build:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 49):
+	@python setup.py sdist bdist_wheel
+	
+
+check_code:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 8):
+	@flake8 scripts/* Team_Energy/*.py
+	
+
+count_lines:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 34):
+	@find ./ -name '*.py' -exec  wc -l {} \; | sort -n| awk \
+	'{printf "%4s %s\n", $$1, $$2}{s+=$$0}END{print s}'
+	@echo ''
+	@find ./scripts -name '*-*' -exec  wc -l {} \; | sort -n| awk \
+	'{printf "%4s %s\n", $$1, $$2}{s+=$$0}END{print s}'
+	@echo ''
+	@find ./tests -name '*.py' -exec  wc -l {} \; | sort -n| awk \
+	'{printf "%4s %s\n", $$1, $$2}{s+=$$0}END{print s}'
+	@echo ''
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+ 
+# automatic
+# @ := clean
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/10=10%
+#  commands to execute (from `Makefile', line 21):
+	@rm -f */version.txt
+	@rm -f .coverage
+	@rm -fr */__pycache__ */*.pyc __pycache__
+	@rm -fr build dist
+	@rm -fr Team_Energy-*.dist-info
+	@rm -fr Team_Energy.egg-info
+	
+
+ftest:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 18):
+	@Write me
+	
+
+pypi_test:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 52):
+	@twine upload -r testpypi dist/* -u $(PYPI_USERNAME)
+	
+
+install:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 29):
+	@pip install . -U
+	
+
+# files hash-table stats:
+# Load=15/1024=1%, Rehash=0, Collisions=0/34=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Sat Sep 10 09:39:30 2022
+
+ 

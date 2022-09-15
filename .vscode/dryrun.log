@@ -1,3 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
-xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
-
+make: Entering directory `/Users/jordanharris/code/ZananAH/Team_Energy'
+pip install -r requirements.txt
+make: Leaving directory `/Users/jordanharris/code/ZananAH/Team_Energy'
+ 
