@@ -18,8 +18,8 @@ def split_data(filename,tariff):
     return train_data, validation_data, test_data
 
 # Data-Processing
-def create_data1(acorn_group,tariff):
-    tdata, vdata, testd=split_data(f'https://storage.googleapis.com/energy_usage_prediction_903/df_{name}_avg_{tariff}_v1.csv',tariff)
+def create_data(acorn_group,tariff):
+    tdata, vdata, testd=split_data(f'https://storage.googleapis.com/energy_usage_prediction_903/df_{acorn_group}_avg_{tariff}_v1.csv',tariff)
     # add val and train for prophet
     combine_tr_vl=False
 
