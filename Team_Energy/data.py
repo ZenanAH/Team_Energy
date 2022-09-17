@@ -47,10 +47,16 @@ def prepare_sequences(train_df,test_df, val_df = None):
 
 
 # Data - Paritition
-def split_data(filename):
+def split_data(filename, tariff):
     fulldata = pd.read_csv(filename)
     fulldata['DateTime'] = pd.to_datetime(fulldata['DateTime'])
-    train_data = fulldata[(fulldata['DateTime'] >= '2012-01-01') & (fulldata['DateTime'] < '2014-01-01')].reset_index(drop = True)
+
+    if tariff == 'Tou':
+        start_date = '2013-01-01'
+    else:
+        start_date = '2012 -01-01'
+
+    train_data = fulldata[(fulldata['DateTime'] >= start_date) & (fulldata['DateTime'] < '2014-01-01')].reset_index(drop = True)
     validation_data = fulldata[(fulldata['DateTime'] >= '2014-01-01') & (fulldata['DateTime'] < '2014-02-01')].reset_index(drop = True)
     test_data = fulldata[(fulldata['DateTime'] >= '2014-02-01') & (fulldata['DateTime'] < '2014-03-01')].reset_index(drop = True)
     return train_data, validation_data, test_data

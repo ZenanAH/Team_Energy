@@ -14,7 +14,7 @@ print('input tariff: Std or ToU')
 tariff = input()
 
 # Joblib import model
-filename = f'model_{name}_{tariff}.joblib'
+filename = f'RNNmodel_{name}_{tariff}.joblib'
 m = joblib.load(filename)
 print('model loaded succcessfully')
 

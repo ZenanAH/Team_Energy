@@ -72,13 +72,13 @@ if __name__ == "__main__":
     print('Fetching data ...')
 
     # Get Data
-    train_df, test_df = create_data(name, tariff)
+    train_df, test_df, val_df = create_data(name, tariff)
 
     print('data imported successfully')
 
     print('preparing sequences')
     # Prepare sequences
-    x_train,y_train,x_test,sc, test_set = prepare_sequences(train_df, test_df)
+    x_train,y_train,x_test,sc, test_set = prepare_sequences(train_df, test_df, val_df)
     print('sequence preparation complete')
     print('Now training model...')
     # Train

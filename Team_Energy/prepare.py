@@ -2,8 +2,6 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 
-
-
 def prepare_sequences(train_df,test_df, val_df = None):
     train_df.set_index('DateTime',inplace=True)
     test_df.set_index('DateTime',inplace=True)
