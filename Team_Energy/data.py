@@ -5,25 +5,13 @@ from sklearn.preprocessing import MinMaxScaler
 
 
 # Data - Paritition
-<<<<<<< HEAD
-def split_data(filename, tariff):
-    fulldata = pd.read_csv(filename)
-    fulldata['DateTime'] = pd.to_datetime(fulldata['DateTime'])
-
-    if tariff == 'Tou':
-        start_date = '2013-01-01'
-    else:
-        start_date = '2012 -01-01'
-
-=======
 def split_data(filename,tariff):
     fulldata = pd.read_csv(filename)
     fulldata['DateTime'] = pd.to_datetime(fulldata['DateTime'])
-    if tariff=="Tou":
+    if tariff=="ToU":
       start_date='2013-01-01'
     else:
       start_date='2012-01-01'
->>>>>>> 64acfd659c836a4edffd4a9b3516f5f5af573a05
     train_data = fulldata[(fulldata['DateTime'] >= start_date) & (fulldata['DateTime'] < '2014-01-01')].reset_index(drop = True)
     validation_data = fulldata[(fulldata['DateTime'] >= '2014-01-01') & (fulldata['DateTime'] < '2014-02-01')].reset_index(drop = True)
     test_data = fulldata[(fulldata['DateTime'] >= '2014-02-01') & (fulldata['DateTime'] < '2014-03-01')].reset_index(drop = True)
@@ -62,8 +50,6 @@ def create_data(acorn_group,tariff):
     val_df.reset_index(inplace=True)
 
     return train_df,test_df,val_df
-
-
 
 # ****  Other Parameters ****
 

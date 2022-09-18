@@ -15,7 +15,7 @@ print('input tariff: Std or ToU')
 tariff = input()
 
 # Joblib import model
-filename = f'RNNmodel_{name}_{tariff}'
+filename = f'RNNmodel_{name}_{tariff}.joblib'
 m = joblib.load(filename)
 print('model loaded succcessfully')
 
@@ -45,12 +45,10 @@ def plot_graphs(test_set,predicted_consumption):
     plt.legend()
     plt.show()
 
-
-
 if __name__ == "__main__":
     # define df's using data.py
 
-    train_df, test_df,val_df = create_data(name = name, tariff = tariff)
+    train_df, test_df,val_df = create_data(name,tariff)
     X_train, y_train, X_test, sc, test_set = prepare_sequences(train_df, test_df,val_df)
 
     print('dataframes loaded')
