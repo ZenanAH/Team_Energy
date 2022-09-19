@@ -21,7 +21,7 @@ def split_data(filename,tariff):
 def create_data(acorn_group,tariff):
     tdata, vdata, testd=split_data(f'https://storage.googleapis.com/energy_usage_prediction_903/df_{acorn_group}_avg_{tariff}_v1.csv',tariff)
     # add val and train for prophet
-    combine_tr_vl=False
+    combine_tr_vl=True
 
     if combine_tr_vl==True:
       pdata=pd.concat([tdata,vdata],axis=0).reset_index(drop=True)
@@ -64,9 +64,9 @@ def get_holidays():
 
 ## if using prophet
 
-def get_weather(train_df, test_df):
+def get_weather(train_df, test_df,tariff):
 
-    twd, vwd, testwd=split_data('https://storage.googleapis.com/weather-data-processed-for-le-wagon/cleaned_weather_hourly_darksky.csv')
+    twd, vwd, testwd=split_data('https://storage.googleapis.com/weather-data-processed-for-le-wagon/cleaned_weather_hourly_darksky.csv',tariff)
     wd=pd.concat([twd,vwd],axis=0).reset_index(drop=True)
     wd_filt=wd[['DateTime','temperature','windSpeed','precipType_rain']].dropna()
     wd_filt['DateTime']=pd.to_datetime(wd_filt['DateTime'])

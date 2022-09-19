@@ -7,6 +7,7 @@ from Team_Energy.data import split_data, create_data, get_holidays, get_weather
 import seaborn as sns
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure
+from prophet import Prophet
 
 print('input name')
 name = input()
@@ -14,7 +15,7 @@ print('input tariff: Std or ToU')
 tariff = input()
 
 # Joblib import model
-filename = f'RNNmodel_{name}_{tariff}.joblib'
+filename = f'model_{name}_{tariff}.joblib'
 m = joblib.load(filename)
 print('model loaded succcessfully')
 
@@ -29,7 +30,7 @@ def forecast_model(m,train_wd,test_wd,add_weather=True):
         fcst = m.predict(future)
     else:
         fcst = m.predict(future)
-    forecast=fcst.loc[fcst['ds']>='2014-02-01 00:00:00',['ds','yhat']]
+    forecast=fcst.loc[fcst['ds']>='2014-01-01 00:00:00',['ds','yhat']]
     return forecast
 
 # Evaluate model
@@ -48,18 +49,19 @@ def plot_graphs(test_df, forecast):
 if __name__ == "__main__":
     # define df's using data.py
 
-    train_df, test_df = create_data(name = name, tariff = tariff)
-    train_wd, test_wd = get_weather(train_df, test_df)
+    train_df,test_df,val_df = create_data(name, tariff)
+    train_wd, test_wd = get_weather(train_df, test_df,tariff)
     print('dataframes loaded')
     # Calculate forecast and MAPE
     forecast = forecast_model(m=m, train_wd = train_wd, test_wd = test_wd, add_weather = True)
     print('forecast made')
-    mape = evaluate(test_df['KWH/hh'], forecast['yhat'])
+    forecast_plot=forecast.loc[(forecast['ds']>='2014-01-01 00:00:00') & (forecast['ds']<'2014-02-01 00:00:00'),['ds','yhat']]
+    mape = evaluate(val_df['KWH/hh'], forecast_plot['yhat'])
     # Print MAPE
     print('mape is:')
     print(mape)
 
     # Plot the graphs
     print('now plotting')
-    plot_graphs(test_df = test_df, forecast= forecast)
+    plot_graphs(test_df = val_df, forecast= forecast)
     print('operation complete')
