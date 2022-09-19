@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Sat Sep 10 09:39:30 2022
+# Make data base, printed on Mon Sep 19 17:40:32 2022
 
 # Variables
 
@@ -15,8 +15,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 HOMEBREW_NO_ANALYTICS = 1
 # automatic
@@ -42,15 +40,11 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # makefile (from `Makefile', line 47)
 PYPI_USERNAME = <AUTHOR>
 # environment
-VSCODE_CWD = /Users/jordanharris/code/ZananAH
+VSCODE_CWD = /
 # environment
-PATH = /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:./bin:./node_modules/.bin:/Users/jordanharris/.pyenv/plugins/pyenv-virtualenv/shims:/Users/jordanharris/.pyenv/shims:/Users/jordanharris/.rbenv/bin:/Users/jordanharris/.pyenv/plugins/pyenv-virtualenv/shims:/Users/jordanharris/.pyenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/jordanharris/.fig/bin:/Users/jordanharris/.local/bin:/usr/local/sbin
+PATH = /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:./bin:./node_modules/.bin:/Users/jordanharris/.pyenv/plugins/pyenv-virtualenv/shims:/Users/jordanharris/.pyenv/shims:/Users/jordanharris/.rbenv/bin:/Users/jordanharris/.pyenv/plugins/pyenv-virtualenv/shims:/Users/jordanharris/.pyenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/Apple/usr/bin:/Users/jordanharris/.fig/bin:/Users/jordanharris/.local/bin:/usr/local/sbin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-VIRTUAL_ENV = /Users/jordanharris/.pyenv/versions/3.8.12/envs/lewagon
-# environment
-LaunchInstanceID = 498F5CDD-5577-4A21-B75B-245E464067A8
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
@@ -58,13 +52,15 @@ PYENV_ROOT = /Users/jordanharris/.pyenv
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.BLr7gGNXoN/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ui2Y5YZLHn/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-TTY = /dev/ttys002
+DISPLAY = /private/tmp/com.apple.launchd.zwopk6sDb9/org.xquartz:0
 # environment
-FIG_PID = 56960
+TTY = not a tty
+# environment
+FIG_PID = 3549
 # environment
 PWD = /Users/jordanharris/code/ZananAH/Team_Energy
 # environment
@@ -78,9 +74,7 @@ HOME = /Users/jordanharris
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CLI = 1
-# environment
-VSCODE_CODE_CACHE_PATH = /Users/jordanharris/Library/Application Support/Code/CachedData/784b0177c56c607789f9638da7b6bf3230d47a8c
+VSCODE_CODE_CACHE_PATH = /Users/jordanharris/Library/Application Support/Code/CachedData/74b1f979648cc44d385a2286793c226e611f59e7
 # environment
 LOGNAME = jordanharris
 # environment
@@ -100,27 +94,19 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 3
-# environment
-FIG_TERM = 1
+SHLVL = 1
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = jordanharris
-# environment
-FIG_TERM_VERSION = 5.2.0
-# environment
-TERM_SESSION_ID = 1AF1ABB2-D21F-420E-ABD7-67B2EE6F6CCC
+# makefile
+.DEFAULT_GOAL := install_requirements
 # environment
 LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
-# environment
-FIG_INTEGRATION_VERSION = 8
 # default
 MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
-# environment
-TERM_PROGRAM = Apple_Terminal
 # default
 .VARIABLES := 
 # environment
@@ -128,7 +114,7 @@ TMPDIR = /var/folders/rl/0s5z0lfs141b962gbhcmptsr0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/jordanharris/Library/Application Support/Code/1.71.0-main.sock
+VSCODE_IPC_HOOK = /Users/jordanharris/Library/Application Support/Code/1.71.2-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -138,11 +124,9 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 445
-# environment
 NVM_DIR = /Users/jordanharris/.nvm
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.12885322303.12885322309.333FEC6E-9EF5-480D-A28B-564C8A7D1F7E
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.12888691148.12888691154
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -163,10 +147,6 @@ PAGER = less
 LC_ALL = C
 # environment
 PYENV_VIRTUALENV_DISABLE_PROMPT = 1
-# environment
-PYENV_VIRTUAL_ENV = /Users/jordanharris/.pyenv/versions/3.8.12/envs/lewagon
-# environment
-SECURITYSESSIONID = 186a3
 # automatic
 ^F = $(notdir $^)
 # default
@@ -177,16 +157,12 @@ PYENV_VIRTUALENV_INIT = 1
 .INCLUDE_DIRS = /usr/local/include
 # environment
 MAKELEVEL := 0
-# makefile
-.DEFAULT_GOAL := install_requirements
 # environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
-VSCODE_PID = 449
+VSCODE_PID = 3542
 # variable set hash-table stats:
-# Load=87/1024=8%, Rehash=0, Collisions=4/113=4%
+# Load=75/1024=7%, Rehash=0, Collisions=2/101=2%
 
 # Pattern-specific Variable Values
 
@@ -194,9 +170,9 @@ VSCODE_PID = 449
 
 # Directories
 
-# . (device 16777220, inode 12885785136): 19 files, no impossibilities.
+# . (device 16777220, inode 12885785136): 24 files, no impossibilities.
 
-# 19 files, no impossibilities in 1 directories.
+# 24 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -305,7 +281,6 @@ clean:
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
- 
 # automatic
 # @ := clean
 # automatic
@@ -339,6 +314,7 @@ ftest:
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 18):
 	@Write me
+ 
 	
 
 pypi_test:
@@ -370,6 +346,6 @@ install:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Sep 10 09:39:30 2022
+# Finished Make data base on Mon Sep 19 17:40:32 2022
 
  
