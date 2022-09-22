@@ -25,7 +25,7 @@ class Trainer():
 
 
     def train_model(self, epochs = 50, batch_size = 32):
-        # The LSTM architecture
+        # The LSTM architectures
         regressor = Sequential()
 
         # First LSTM layer with Dropout regularisation
@@ -71,13 +71,11 @@ if __name__ == "__main__":
 
     # Get Data
     train_df, test_df, val_df = create_data(name, tariff)
-    train_df,test_df,val_df = create_data(name, tariff)
 
     print('data imported successfully')
 
     print('preparing sequences')
     # Prepare sequences
-    x_train,y_train,x_test,sc, test_set = prepare_sequences(train_df, test_df, val_df)
     X_train, y_train, X_test, sc, test_set = prepare_sequences(train_df, test_df,val_df)
     print('sequence preparation complete')
     print('Now training model...')

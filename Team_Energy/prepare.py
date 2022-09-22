@@ -2,11 +2,11 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 
-<<<<<<< HEAD
-def prepare_sequences(train_df,test_df, val_df = None):
-=======
+<<<<<<< Updated upstream
 def prepare_sequences(train_df,test_df,val_df):
->>>>>>> 64acfd659c836a4edffd4a9b3516f5f5af573a05
+=======
+def prepare_sequences(train_df,test_df, val_df = None):
+>>>>>>> Stashed changes
     train_df.set_index('DateTime',inplace=True)
     test_df.set_index('DateTime',inplace=True)
     val_df.set_index('DateTime',inplace=True)
