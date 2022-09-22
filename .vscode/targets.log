@@ -7,7 +7,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
+<<<<<<< Updated upstream
 # Make data base, printed on Mon Sep 19 17:40:32 2022
+=======
+# Make data base, printed on Tue Sep 20 20:37:15 2022
+>>>>>>> Stashed changes
 
 # Variables
 
@@ -46,12 +50,18 @@ PATH = /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:./bin:./
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
+<<<<<<< Updated upstream
+=======
+LaunchInstanceID = 79414A2C-A296-4FEE-A561-20D6E49B2B96
+# environment
+>>>>>>> Stashed changes
 ELECTRON_RUN_AS_NODE = 1
 # environment
 PYENV_ROOT = /Users/jordanharris/.pyenv
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
+<<<<<<< Updated upstream
 SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ui2Y5YZLHn/Listeners
 # automatic
 %F = $(notdir $%)
@@ -61,6 +71,17 @@ DISPLAY = /private/tmp/com.apple.launchd.zwopk6sDb9/org.xquartz:0
 TTY = not a tty
 # environment
 FIG_PID = 3549
+=======
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.JxctGiG6Rp/Listeners
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = /private/tmp/com.apple.launchd.YhkLSEd0Ov/org.xquartz:0
+# environment
+TTY = not a tty
+# environment
+FIG_PID = 4738
+>>>>>>> Stashed changes
 # environment
 PWD = /Users/jordanharris/code/ZananAH/Team_Energy
 # environment
@@ -95,6 +116,11 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 SHLVL = 1
+<<<<<<< Updated upstream
+=======
+# environment
+LOCAL_GIT_DIRECTORY = /Applications/GitHub Desktop.app/Contents/Resources/app/git
+>>>>>>> Stashed changes
 # default
 MAKE_VERSION := 3.81
 # environment
@@ -147,6 +173,11 @@ PAGER = less
 LC_ALL = C
 # environment
 PYENV_VIRTUALENV_DISABLE_PROMPT = 1
+<<<<<<< Updated upstream
+=======
+# environment
+SECURITYSESSIONID = 186a3
+>>>>>>> Stashed changes
 # automatic
 ^F = $(notdir $^)
 # default
@@ -160,9 +191,15 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
+<<<<<<< Updated upstream
 VSCODE_PID = 3542
 # variable set hash-table stats:
 # Load=75/1024=7%, Rehash=0, Collisions=2/101=2%
+=======
+VSCODE_PID = 4731
+# variable set hash-table stats:
+# Load=78/1024=8%, Rehash=0, Collisions=2/104=2%
+>>>>>>> Stashed changes
 
 # Pattern-specific Variable Values
 
@@ -170,9 +207,15 @@ VSCODE_PID = 3542
 
 # Directories
 
+<<<<<<< Updated upstream
 # . (device 16777220, inode 12885785136): 24 files, no impossibilities.
 
 # 24 files, no impossibilities in 1 directories.
+=======
+# . (device 16777220, inode 12885785136): 25 files, no impossibilities.
+
+# 25 files, no impossibilities in 1 directories.
+>>>>>>> Stashed changes
 
 # Implicit Rules
 
@@ -305,6 +348,7 @@ clean:
 	@rm -fr */__pycache__ */*.pyc __pycache__
 	@rm -fr build dist
 	@rm -fr Team_Energy-*.dist-info
+ 
 	@rm -fr Team_Energy.egg-info
 	
 
@@ -346,6 +390,10 @@ install:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
+<<<<<<< Updated upstream
 # Finished Make data base on Mon Sep 19 17:40:32 2022
+=======
+# Finished Make data base on Tue Sep 20 20:37:15 2022
+>>>>>>> Stashed changes
 
  
