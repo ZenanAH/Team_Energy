@@ -25,7 +25,7 @@ class Trainer():
 
 
     def train_model(self, epochs = 50, batch_size = 32):
-        # The LSTM architecture
+        # The LSTM architectures
         regressor = Sequential()
 
         # First LSTM layer with Dropout regularisation

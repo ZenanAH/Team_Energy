@@ -8,9 +8,13 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 # Make data base, printed on Mon Sep 19 17:40:32 2022
 =======
 # Make data base, printed on Tue Sep 20 20:37:15 2022
+>>>>>>> Stashed changes
+=======
+# Make data base, printed on Thu Sep 22 13:40:44 2022
 >>>>>>> Stashed changes
 
 # Variables
@@ -51,8 +55,12 @@ PATH = /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:./bin:./
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 LaunchInstanceID = 79414A2C-A296-4FEE-A561-20D6E49B2B96
+=======
+LaunchInstanceID = 5F17F39F-8C61-4215-9839-29F80897C1AF
+>>>>>>> Stashed changes
 # environment
 >>>>>>> Stashed changes
 ELECTRON_RUN_AS_NODE = 1
@@ -61,6 +69,7 @@ PYENV_ROOT = /Users/jordanharris/.pyenv
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ui2Y5YZLHn/Listeners
 # automatic
@@ -81,6 +90,17 @@ DISPLAY = /private/tmp/com.apple.launchd.YhkLSEd0Ov/org.xquartz:0
 TTY = not a tty
 # environment
 FIG_PID = 4738
+>>>>>>> Stashed changes
+=======
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.lyjjq0zg8f/Listeners
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = /private/tmp/com.apple.launchd.QEQ42dNkhD/org.xquartz:0
+# environment
+TTY = not a tty
+# environment
+FIG_PID = 728
 >>>>>>> Stashed changes
 # environment
 PWD = /Users/jordanharris/code/ZananAH/Team_Energy
@@ -117,9 +137,12 @@ MAKECMDGOALS := all
 # environment
 SHLVL = 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 # environment
 LOCAL_GIT_DIRECTORY = /Applications/GitHub Desktop.app/Contents/Resources/app/git
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # default
 MAKE_VERSION := 3.81
@@ -174,7 +197,10 @@ LC_ALL = C
 # environment
 PYENV_VIRTUALENV_DISABLE_PROMPT = 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 # environment
 SECURITYSESSIONID = 186a3
 >>>>>>> Stashed changes
@@ -192,6 +218,7 @@ MAKELEVEL := 0
 LANG = C
 # environment
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 VSCODE_PID = 3542
 # variable set hash-table stats:
 # Load=75/1024=7%, Rehash=0, Collisions=2/101=2%
@@ -199,6 +226,11 @@ VSCODE_PID = 3542
 VSCODE_PID = 4731
 # variable set hash-table stats:
 # Load=78/1024=8%, Rehash=0, Collisions=2/104=2%
+>>>>>>> Stashed changes
+=======
+VSCODE_PID = 576
+# variable set hash-table stats:
+# Load=77/1024=8%, Rehash=0, Collisions=2/103=2%
 >>>>>>> Stashed changes
 
 # Pattern-specific Variable Values
@@ -208,9 +240,15 @@ VSCODE_PID = 4731
 # Directories
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 # . (device 16777220, inode 12885785136): 24 files, no impossibilities.
 
 # 24 files, no impossibilities in 1 directories.
+=======
+# . (device 16777220, inode 12885785136): 25 files, no impossibilities.
+
+# 25 files, no impossibilities in 1 directories.
+>>>>>>> Stashed changes
 =======
 # . (device 16777220, inode 12885785136): 25 files, no impossibilities.
 
@@ -354,6 +392,7 @@ clean:
 
 ftest:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 18):
@@ -391,9 +430,13 @@ install:
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 # Finished Make data base on Mon Sep 19 17:40:32 2022
 =======
 # Finished Make data base on Tue Sep 20 20:37:15 2022
+>>>>>>> Stashed changes
+=======
+# Finished Make data base on Thu Sep 22 13:40:44 2022
 >>>>>>> Stashed changes
 
  
